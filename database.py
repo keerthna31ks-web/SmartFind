@@ -4,7 +4,7 @@ def get_connection():
         host="localhost",
         port=3306,
         user="root",
-        password="Keerthuma31",
+       # password="Keerthuma31",
         database = "smartfind"
     )
     return connection
