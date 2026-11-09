@@ -61,16 +61,16 @@ Cosine similarity is used to compare the semantic similarity between lost and fo
 ## 📸 Screenshots
 
 ### Homepage
-![SmartFind Homepage](screenshots/homepage.png)
+![SmartFind Homepage](screenshots/home.png)
 
 ### Report Item Form
-![Report Item Form](screenshots/report-form.png)
+![Report Item Form](screenshots/report- form.png)
 
 ### AI Matching API
-![AI Matching](screenshots/ai-matching.png)
+![AI Matching](screenshots/ai-matcher.png)
 
 ### Claim Request Form
-![Claim Request Form](screenshots/claim-request.png)
+![Claim Request Form](screenshots/claim-request form.png)
 
 ### View Claim Requests API
 ![View Requests API](screenshots/view-requests-api.png)
