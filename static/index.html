@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFind - Lost and Found</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+
+    
+<body>
+
+    <header>
+        <h1>SmartFind</h1>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Lost it. Find it. Return it.</h2>
+
+            <p>
+                Find your lost belongings with SmartFind.
+                Help others reconnect with their missing items.
+            </p>
+
+            <div class="buttons">
+                
+            <button type="button" onclick="openReportForm('lost')">
+            Report Lost Item
+            </button>
+
+            <button type="button" onclick="openReportForm('found')">
+            Report Found Item
+            </button>
+
+            </div>
+        </section>
+        
+
+<section class="recent-items">
+
+    <h2>Recently Reported Items</h2>
+
+    <!-- Search bar -->
+    <input
+        type="text"
+        id="search-input"
+        placeholder="Search items..."
+    >
+        <!-- Status Filter -->
+    <select id="status-filter">
+        <option value="all">All Items</option>
+        <option value="lost">Lost Items</option>
+        <option value="found">Found Items</option>
+    </select>
+
+    <div class="item-container" id="item-container">
+        <p>Loading reports...</p>
+    </div>
+
+</section>
+
+<!-- Owner's Claim Requests Section -->
+<section class="recent-items" id="owner-requests-section" style="display: none;">
+
+    <h2>Claim Requests for Your Lost Item</h2>
+
+    <div id="owner-requests-container">
+        <p>Loading claim requests...</p>
+    </div>
+
+</section>
+
+
+<section class="report-section" id="report-section">
+
+    <h2>Report an Item</h2>
+
+    <form id="report-form">
+
+        <label for="item_name">Item Name</label>
+        <input
+            type="text"
+            id="item_name"
+            name="item_name"
+            placeholder="Example: Black backpack"
+            required
+        >
+
+        <label for="description">Description</label>
+        <textarea
+            id="description"
+            name="description"
+            placeholder="Describe the item..."
+            required
+        ></textarea>
+
+        
+        <label for="location">Campus Location</label>
+
+        <select id="location" name="location" required>
+            <option value="">Select a location</option>
+            <option value="Library">Library</option>
+            <option value="Classroom">Classroom</option>
+            <option value="Laboratory">Laboratory</option>
+            <option value="Canteen">Canteen</option>
+            <option value="Auditorium">Auditorium</option>
+            <option value="Parking Area">Parking Area</option>
+            <option value="Reception">Reception</option>
+            <option value="Sports Ground">Sports Ground</option>
+            <option value="Bus Stop">Bus Stop</option>
+            <option value="Security Office">Security Office</option>
+            <option value="Other">Other</option>
+        </select>
+
+        
+            <label for="status">Report Type</label>
+            <select id="status" name="status" required>
+                <option value="lost">Lost Item</option>
+                <option value="found">Found Item</option>
+            </select>
+
+            
+            <div id="handover-section">
+
+                <label for="handover_option">Handover Option</label>
+
+                <select id="handover_option" name="handover_option">
+                    <option value="claim_request">
+                        Keep item and send claim request
+                    </option>
+                    <option value="admin_office">
+                        Submit to admin office
+                    </option>
+                </select>
+
+            </div>
+
+
+            <label for="image">Upload Item Image</label>
+            <input
+                type="file"
+                id="image"
+                name="image"
+                accept=".jpg,.jpeg,.png,.webp"
+            >
+
+
+        <button type="submit">Submit Report</button>
+
+    </form>
+
+        </form>
+
+
+    <!-- CLAIM REQUEST FORM -->
+    <section id="claim-request-section" style="display: none;">
+
+        <h2>Claim Request Form</h2>
+
+        <form id="claim-request-form">
+
+            <input type="hidden" id="claim-report-id" name="report_id">
+
+            <label for="found_location">Where did you find the item?</label>
+            <select id="found_location" name="found_location" required>
+                <option value="">Select location</option>
+                <option value="Library">Library</option>
+                <option value="Classroom">Classroom</option>
+                <option value="Laboratory">Laboratory</option>
+                <option value="Canteen">Canteen</option>
+                <option value="Auditorium">Auditorium</option>
+                <option value="Parking Area">Parking Area</option>
+                <option value="Reception">Reception</option>
+                <option value="Sports Ground">Sports Ground</option>
+                <option value="Bus Stop">Bus Stop</option>
+                <option value="Security Office">Security Office</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="found_time">When did you find it?</label>
+            <input type="text" id="found_time" name="found_time"
+                   placeholder="Example: Today at 10 AM">
+
+            <label for="current_location">Where is the item now?</label>
+            <input type="text" id="current_location" name="current_location"
+                   placeholder="Example: With me">
+
+            <label for="claim_description">Additional details</label>
+            <textarea id="claim_description" name="description"
+                      placeholder="Provide details to help verify the item..."
+                      required></textarea>
+
+            <label for="claim_photo">Upload item photo (optional)</label>
+            <input type="file" id="claim_photo" name="photo"
+                   accept=".jpg,.jpeg,.png,.webp">
+
+            <label for="claim_handover">Handover Option</label>
+            <select id="claim_handover" name="handover_option" required>
+                <option value="claim_request">Keep item and send claim request</option>
+                <option value="admin_office">Submit to admin office</option>
+            </select>
+
+            <button type="submit">Send Claim Request</button>
+
+        </form>
+
+    </section>
+
+
+</section>
+
+</section>
+
+
+    </main>
+
+</body>
+</html>
+
+
+
