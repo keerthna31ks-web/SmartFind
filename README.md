@@ -70,7 +70,7 @@ Cosine similarity is used to compare the semantic similarity between lost and fo
 ![AI Matching](screenshots/ai-matcher.png)
 
 ### Claim Request Form
-![Claim Request Form](screenshots/claim-request form.png)
+![Claim Request Form](screenshots/claim-request.png)
 
 ### View Claim Requests API
 ![View Requests API](screenshots/view-requests-api.png)
