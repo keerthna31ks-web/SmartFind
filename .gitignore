@@ -21,3 +21,6 @@ Thumbs.db
 code_similarity.py
 test_db.py
 test_matching.py
+ca.pem
+migrate_data.py
+
