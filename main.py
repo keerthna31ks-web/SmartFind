@@ -9,6 +9,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from functools import lru_cache
 
 CAMPUS_LOCATIONS = [
     "Library",
@@ -24,7 +25,9 @@ CAMPUS_LOCATIONS = [
     "Other"
 ]
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+@lru_cache(maxsize=1)
+def get_model():
+    return SentenceTransformer("all-MiniLM-L6-v2")
 import os
 import shutil
 import uuid
@@ -113,6 +116,8 @@ def normalize_location(location):
 
 
 def text_similarity(text1, text2):
+    model = get_model()
+
     embeddings = model.encode([text1, text2])
 
     score = cosine_similarity(
